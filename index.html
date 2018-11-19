@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="style.css">
+  <script src="jquery-3.2.1.js"></script>
+  <title>exercice4 JQ</title>
+</head>
+<body>
+  <button id="button1" type="button" name="button1">Size</button>
+  <button id="button2" type="button" name="button2">Color</button>
+  <button id="button3" type="button" name="button3">Retour couleur</button>
+  <button id="button4" type="button" name="button4">Disparaitre</button>
+  <button id="button5" type="button" name="button5">Réaparaitre</button>
+  <div id="rectangle"class="rectangle">
+  </div>
+  <script>
+  $(function(){
+    $('#button1').click(function(){
+      // si la hauteur du rectangle est inferieure a 100 on augmente de 10px
+      if($('#rectangle').height()<100){
+        $('#rectangle').css('height', '+=10px' );
+      }else{
+        //sinon on remet le rectangle à une taille de 10px
+        $('#rectangle').css('height', '10px' );
+      }
+    });
+    $('#button2').click(function(){
+      $('#rectangle').css('background-color', 'green');
+    });
+    $('#button3').click(function(){
+      //on demande d utiliser la variable initcolor comme couleur
+      $('#rectangle').css('background-color', 'white');
+    });
+    $('#button4').click(function(){
+      $('#rectangle').hide();
+    });
+    $('#button5').click(function(){
+      $('#rectangle').show();
+    });
+  });
+  </script>
+</body>
+</html>
